@@ -1,5 +1,5 @@
 # wordcount
-##Flink 
+## Flink basic
 1) start/stop cluster: 
   ./bin/start-cluster.sh
   ./bin/stop-cluster.sh
@@ -26,37 +26,37 @@ refer to https://ci.apache.org/projects/flink/flink-docs-release-1.12/try-flink/
   - open third terminal, check result under /opt/flink-1.12.1/log
 ### execution result:
 input:
-	root@hall-OptiPlex-9020:~# nc -lk 9999
-	aa
-	aa
-	aa aa
-	aa aa aa
-	aa aa aaa aaa
-	aa
-	aa
-	aa
-	bb
-	bb
-	bb bb bb
-	bb bb bb bbb
-	abc abc abc abc ded
+  root@hall-OptiPlex-9020:~# nc -lk 9999
+  aa
+  aa
+  aa aa
+  aa aa aa
+  aa aa aaa aaa
+  aa
+  aa
+  aa
+  bb
+  bb
+  bb bb bb
+  bb bb bb bbb
+  abc abc abc abc ded
 
 output under third terminal:
-	cat flink-root-taskexecutor-2-hall-OptiPlex-9020.out
-	WARNING: An illegal reflective access operation has occurred
-	WARNING: Illegal reflective access by org.apache.flink.shaded.akka.org.jboss.netty.util.internal.ByteBufferUtil (file:/opt/flink-1.12.1/lib/flink-dist_2.12-1.12.1.jar) to method java.nio.DirectByteBuffer.cleaner()
-	WARNING: Please consider reporting this to the maintainers of org.apache.flink.shaded.akka.org.jboss.netty.util.internal.ByteBufferUtil
-	WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-	WARNING: All illegal access operations will be denied in a future release
-	(aa,7)
-	(aa,2)
-	(aaa,2)
-	(aa,3)
-	(bb,5)
-	(bb,3)
-	(bbb,1)
-	(abc,4)
-	(ded,1)
+  cat flink-root-taskexecutor-2-hall-OptiPlex-9020.out
+  WARNING: An illegal reflective access operation has occurred
+  WARNING: Illegal reflective access by org.apache.flink.shaded.akka.org.jboss.netty.util.internal.ByteBufferUtil (file:/opt/flink-1.12.1/lib/flink-dist_2.12-1.12.1.jar) to method java.nio.DirectByteBuffer.cleaner()
+  WARNING: Please consider reporting this to the maintainers of org.apache.flink.shaded.akka.org.jboss.netty.util.internal.ByteBufferUtil
+  WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+  WARNING: All illegal access operations will be denied in a future release
+  (aa,7)
+  (aa,2)
+  (aaa,2)
+  (aa,3)
+  (bb,5)
+  (bb,3)
+  (bbb,1)
+  (abc,4)
+  (ded,1)
 
 output under second terminal:
 	./bin/flink run /tmp/windowwordcount-0.1.jar
@@ -85,3 +85,6 @@ under second terminal, click "Ctrl + C" to quit stream process then get below ou
 
 View job status on GUI:
   - http://10.182.173.198:8081/#/job/completed
+  
+## architecture
+https://ci.apache.org/projects/flink/flink-docs-stable/learn-flink/
